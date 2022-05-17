@@ -1,0 +1,38 @@
+Rainbow project
+
+
+Ideas:
+
+
+Rainbow - Colours
+        - Each colour different questions
+            - Skips?
+                - Skip colour
+                - Skip point
+        - Difficult increse over time
+        - Timed
+        - Reward at end (what used for though?)
+        - Progress
+        - Nodes
+
+Shop:
+    - Background Style (Spend coins for different background)
+x`
+Colours:
+    - Red
+        - Maths
+    - Orange
+        - Writing (typing)
+    - Yellow
+        - Reading
+    - Green
+        - Matching
+    - Blue
+        - ?
+    - Indigo
+        - ?
+    - Violet
+        - ?
+
+End
+    - Rebirth? (Relive the journey)

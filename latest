@@ -1,0 +1,47 @@
+import os
+import argparse
+
+def UpdateFile():
+    # Get old data
+    files = os.listdir(".")
+
+    latest = 0
+    new = ""
+
+    fileTimedata = ""
+
+    for file in files:
+        mti = os.path.getmtime(f"{file}")
+        
+        fileTimedata += f"{file}: {mti}\t"
+        
+        if mti > latest:
+            latest = mti
+            old = new
+            new = file
+
+    print(latest, old, new)
+
+
+    # Update
+    data = ""
+    with open("README.md", "r") as f:
+        data = f.read()
+        
+    data = data.replace(f"{old}", f"{new}")
+
+    with open("README.md", "w") as f:
+        f.write(data)
+        
+def parserFunc():
+    parser = argparse.ArgumentParser(description="Readme updater info")
+    parser.add_argument("--skip", default="")
+    
+    return vars(parser.parse_args())
+
+args = parserFunc()
+
+print(args["skip"])
+
+if str(args["skip"]).find("++skip") == -1:
+    UpdateFile()

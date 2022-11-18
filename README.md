@@ -2,7 +2,7 @@
 
 A folder of files, might be random to some but useful to others.
 
-Latest [file](README.md)
+Latest [file](latest)
 
 ## Notes
 

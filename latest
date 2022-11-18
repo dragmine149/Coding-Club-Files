@@ -12,31 +12,37 @@ def UpdateFile():
 
     for file in files:
         mti = os.path.getmtime(f"{file}")
-        
+
         fileTimedata += f"{file}: {mti}\t"
-        
+
         if mti > latest:
             latest = mti
-            old = new
             new = file
-
-    print(latest, old, new)
-
 
     # Update
     data = ""
     with open("README.md", "r") as f:
         data = f.read()
-        
+
+    index = data.find("(") + 1
+    edDex = data.find(")")
+    old = data[index:edDex]
+
+    print({"index": index, "edDex": edDex, "Old": old})
+    
+    if old.startswith(".") or old.startswith("__") or old == "latest" or old.endswith(".sec"):
+        # Go back if private file / not one we want to show as latest.
+        return
+
     data = data.replace(f"{old}", f"{new}")
 
     with open("README.md", "w") as f:
         f.write(data)
-        
+
 def parserFunc():
     parser = argparse.ArgumentParser(description="Readme updater info")
     parser.add_argument("--skip", default="")
-    
+
     return vars(parser.parse_args())
 
 args = parserFunc()

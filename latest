@@ -28,7 +28,7 @@ def UpdateFile():
     edDex = data.find(")")
     old = data[index:edDex]
 
-    print({"index": index, "edDex": edDex, "Old": old})
+    print({"index": index, "edDex": edDex, "Old": old, "new": new})
     
     if old.startswith(".") or old.startswith("__") or old == "latest" or old.endswith(".sec"):
         # Go back if private file / not one we want to show as latest.
